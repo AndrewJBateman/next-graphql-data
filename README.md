@@ -1,34 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# :zap: Next GraphQL Data
 
-## Getting Started
+* A Next.js React app using GraphQL & Apollo-Server-Micro to get data from a JSON file.
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-First, run the development server:
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/next-graphql-data?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/next-graphql-data?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/next-graphql-data?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/next-graphql-data?style=plastic)
 
-```bash
-npm run dev
-# or
-yarn dev
+## :page_facing_up: Table of contents
+
+* [:zap: Next GraphQL Data](#zap-next-graphql-data)
+  * [:page_facing_up: Table of contents](#page_facing_up-table-of-contents)
+  * [:books: General Info](#books-general-info)
+  * [:camera: Screenshots](#camera-screenshots)
+  * [:signal_strength: Technologies](#signal_strength-technologies)
+  * [:floppy_disk: Setup](#floppy_disk-setup)
+  * [:computer: Code Examples](#computer-code-examples)
+  * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
+  * [:clap: Inspiration](#clap-inspiration)
+  * [:file_folder: License](#file_folder-license)
+  * [:envelope: Contact](#envelope-contact)
+
+## :books: General Info
+
+* Displays data from the [xxGraphQL API](https://rickandmortyapi.com/graphql).
+* Next.js is for server-rendered react apps. It has automatic code splitting, simple page-based routing, built-in CSS support and hot reloading. Every component file in the pages folder is treated as a page.
+* Apollo Client used to fetch data using GraphQL.
+* GraphQL only return the data requested. Data only served from a single end-point. Lots of companies use it. GraphQL makes tawsks more complex and there are possible performance issues that would not occur using REST with a web cache.
+* [GraphQL Code Generator](https://www.graphql-code-generator.com/) to generate code from GraphQL schema - configured using a `condegen.yml` file
+* [Mantine AppShell](https://mantine.dev/core/app-shell/) used to provide a responsive shell for the app. with header and navbar
+
+## :camera: Screenshots
+
+![Example screenshot](./imgs/list.png).
+
+## :signal_strength: Technologies
+
+* [Node.js v16](https://nodejs.org/) javascript runtime using the [Chrome V8 engine](https://v8.dev/).
+* [React v18](https://reactjs.org/) Javascript library.
+* [GraphQL v15](https://github.com/graphql/graphql-js) API query language
+* [apollo-server-micro v3](https://yarnpkg.com/package/apollo-server-micro) Node.js GraphQL server for Micro
+* [Next v12](https://nextjs.org/) minimalist framework for rendering react apps on the server.
+* [TypeGraphQL v1](https://typegraphql.com/) modern framework for GraphQL API in Node.js
+* [Mantine v4](https://mantine.dev/) React components library
+* [tabler icons react v1](https://www.npmjs.com/package/tabler-icons-react), here is [the icon list](https://tabler-icons.io/)
+
+## :floppy_disk: Setup
+
+* `yarn install` to install dependencies
+* `yarn dev` runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## :computer: Code Examples
+
+* `_app.js` function to display app contents using Hydrate (DOM pre-built using Server-Side HTML Rendering)
+
+```javascript
+function MyApp({ Component, pageProps }) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Hydrate>
+    </QueryClientProvider>
+  );
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## :clipboard: Status & To-Do List
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+* Status: Working using JSON data file
+* To-Do: Replace JSON data with actual API data, Put nav at top
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## :clap: Inspiration
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+* [Jack Herrington: NextJS + GraphQL Blueprint: Professional Grade Setup](https://www.youtube.com/watch?v=XzE-PzALyDc)
 
-## Learn More
+## :file_folder: License
 
-To learn more about Next.js, take a look at the following resources:
+* N/A
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## :envelope: Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
