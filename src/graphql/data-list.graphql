@@ -1,0 +1,11 @@
+query getDataList {
+  dataList {
+    name
+    breed
+    ageInWeeks
+    image
+    sex
+    weight
+    fee
+  }
+}
